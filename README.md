@@ -14,15 +14,14 @@ provider "azurerm" {
 
 module "resource_group" {
   source  = "github.com/ssc-dsai-iac/azure-resource-group-terraform"
+  version = "1.0.0"
 
-  name     = "${var.prefix}-${var.group}-${var.user_defined}-${var.env}-rg"
-  location = var.location
+  name      = "ScSc-DSAI-AIDE-dev-rg"
+  location  = "Canada Central"
 
   tags = {
-    env        = var.env
-    costcenter = var.costcenter
-    ssn        = var.ssn
-    subowner   = var.subowner
+    env        = "dev"
+    costcenter = "111"
   }
 }
 ```
@@ -31,14 +30,14 @@ module "resource_group" {
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.14 |
-| azurerm | >= 2.82.0 |
+| terraform | >= 1.0 |
+| azurerm | >= 3.1.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| azurerm | >= 2.82.0 |
+| azurerm | >= 3.1.0 |
 
 ## Inputs
 
@@ -46,12 +45,12 @@ Name | Description | Type | Default
 ---- | ----------- | ---- | -------
 `name`|The name of the resource group in which resources are created|string|`""`
 `location`|The location of the resource group to be created|string| `"Canada Central"`
-`Tags`|A map of tags to add to all resources|map|`{}`
+`tags`|A map of tags to add to all resources|map|`{}`
 
 ## Outputs
 
 Name | Description
 ---- | -----------
-`resource_group_id`|The id of the resource group created
-`resource_group_location`|The location of the resource group created
-`resource_group_name`|The name of the resource group created
+`id`|The id of the resource group created
+`location`|The location of the resource group created
+`name`|The name of the resource group created

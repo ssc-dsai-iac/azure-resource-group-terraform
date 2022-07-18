@@ -1,14 +1,14 @@
-output "resource_group_id" {
-  value       = azurerm_resource_group.this.id
+output "id" {
   description = "Resource group generated id"
+  value       = azurerm_resource_group.this.id
 }
 
-output "resource_group_location" {
-  value       = azurerm_resource_group.this.location
+output "location" {
   description = "Resource group location (region)"
+  value       = azurerm_resource_group.this.location
 }
 
-output "resource_group_name" {
-  value       = azurerm_resource_group.this.name
+output "name" {
   description = "Resource group name"
+  value       = azurerm_resource_group.this.name
 }
