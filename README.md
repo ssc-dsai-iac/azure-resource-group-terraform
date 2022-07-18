@@ -14,7 +14,6 @@ provider "azurerm" {
 
 module "resource_group" {
   source  = "github.com/ssc-dsai-iac/azure-resource-group-terraform"
-  version = "1.0.0"
 
   name      = "ScSc-DSAI-AIDE-dev-rg"
   location  = "Canada Central"
